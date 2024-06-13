@@ -15,8 +15,11 @@ public class Main {
         b.add("AB 4321 A", "Innova", "Sedan", 2019, 60000);
         b.add("B 1234 AG", "Avanza", "Sedan", 2021, 25000);
 
+        for (int i = 0; i < tr.length; i++) {
+            tr[i] = new TransaksiRental();
+        }
         tr[0].addPeminjaman("Ahmad", 2, 60000, "N 1453 AA");
-        tr[1].addPeminjaman("Ahmad", 3, 30000, "N 4567 YV");
+        tr[1].addPeminjaman("Joni", 3, 30000, "N 4567 YV");
 
         boolean run = true;
         while (run) {

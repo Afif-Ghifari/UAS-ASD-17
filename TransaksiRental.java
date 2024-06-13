@@ -1,3 +1,5 @@
+import javax.print.DocFlavor.STRING;
+
 public class TransaksiRental {
     BarangRental head;
     int size;
@@ -5,7 +7,9 @@ public class TransaksiRental {
     int kodeTransaksi, lamaPinjam;
     String namaPeminjam;
     double totalBiaya;
-    String br;
+    String barangTemp;
+
+    BarangRental br;
 
     public TransaksiRental() {
         head = null;
@@ -87,12 +91,12 @@ public class TransaksiRental {
         }
     }
 
-    public void addPeminjaman(String namaPeminjam, int lamaPinjam, double totalBiaya, String br) throws Exception {
+    public void addPeminjaman(String namaPeminjam, int lamaPinjam, double totalBiaya, String br){
         kodeTransaksi++;
         this.namaPeminjam = namaPeminjam;
         this.lamaPinjam = lamaPinjam;
         this.totalBiaya = totalBiaya;
-        this.br = get(br);
+        this.barangTemp = br;
     }
 
     public void removePeminjaman(){
@@ -100,7 +104,7 @@ public class TransaksiRental {
         namaPeminjam = null;
         lamaPinjam = 0;
         totalBiaya = 0;
-        br = null;
+        barangTemp = null;
     }
 
     public void printPeminjaman() {
@@ -111,7 +115,9 @@ public class TransaksiRental {
             System.out.println("Nama : " + namaPeminjam);
             System.out.println("Lama Pinjam : " + lamaPinjam);
             System.out.println("Total Biaya : " + totalBiaya);
-            System.out.println("No TNKB : " + br);
+            
+            System.out.println("No TNKB : " + barangTemp);
+            
         }
     }
 }
